@@ -2,16 +2,16 @@
 using namespace std;
 
 int main(){
-    long long a,b,c,d,count,n;
+    long long a,b,c,d;
     cin >> a;
     for(int i = 0; i < a; i++){
+        long long n = 0;
         cin >> b >> c >> d;
-        count = 0;
-        n = log(d) / log(c);
-        while(b*pow(c,n)>d){
-            n -= 1;
+        while(b <= d){
+            b *= c;
+            n++;
         }
-        cout << n+1 << endl;  
+        cout << n << endl;  
     }
 return 0;
 }
