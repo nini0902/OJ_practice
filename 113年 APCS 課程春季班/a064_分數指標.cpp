@@ -2,36 +2,23 @@
 using namespace std;
 
 int main(){
-    int n, sc;
+    int n;
     cin >> n;
-    vector<int> sh;
-    vector<int> sl;
-    
+    vector<int> a(n);
+    int unlucky = -1, lucky = 101;
     for(int i = 0; i < n; i++){
-        cin >> sc;
-        if(sc < 60) sl.push_back(sc);
-        else sh.push_back(sc);
+        cin >> a[i];
+        if (a[i] < 60 && a[i] > unlucky) unlucky = a[i];
+        else if (a[i] >= 60 && a[i] < lucky) lucky = a[i];
     }
+    sort(a.begin(), a.end());
 
-    sort(sh.begin(),sh.end());
-    sort(sl.begin(),sl.end());
+    for(int i = 0; i < n-1; i++) cout << a[i] << " ";
+    cout << a[n-1] << endl;
 
-    for(int i = 0; i < sl.size(); i++) cout << sl[i] << " ";
-    for(int i = 0; i < sh.size(); i++) cout << sh[i] << " ";
-    cout << endl;
-
-    if(sh.size()==0){
-        cout << sl[sl.size()-1] << endl;
-        cout << "worst case" << endl;
-    }
-    else if(sl.size()==0){
-        cout << "best case" << endl;
-        cout << sh[0] << endl;
-    }
-    else{
-        cout << sl[sl.size()-1] << endl;
-        cout << sh[0] << endl;
-    }
-
+    if(unlucky == -1) cout << "best case" << endl;
+    else cout << unlucky << endl;
+    if(lucky == 101) cout << "worst case" << endl;
+    else cout << lucky << endl;
 return 0;
 }
