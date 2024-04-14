@@ -9,9 +9,9 @@ int main(){
     sort(a.begin(),a.end());
 
     mid = n/2;
-
+    cout << a[mid] << endl;
     for(int i = 0; i < n; i++){
-        sum += abs(a[i] - a[mid-1]);
+        sum += abs(a[i] - a[mid]);
     }
 
     cout << sum << endl;
