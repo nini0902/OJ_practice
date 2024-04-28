@@ -7,7 +7,7 @@ int main(){
     int n,t = 1;
     long long x,a;
     cin >> n >> x;
-    int l = 1, r = n-1;
+    int l = 0, r = n-1;
 
     for(int i = 1; i <= n; i++){
         cin >> a; //輸入數據
