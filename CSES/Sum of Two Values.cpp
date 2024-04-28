@@ -16,7 +16,7 @@ int main(){
     int m = r;
     while(t1){
         l++, r = m;
-        if(l >= m) t1 = 0; //如果右邊值 < 左邊值
+        if(l >= r) break;; //如果右邊值 < 左邊值
         while(t){
             if(vec[l] + vec[r] == x){
                 m = r-1, yn = 1,t = 0;
