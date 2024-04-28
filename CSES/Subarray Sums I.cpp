@@ -13,14 +13,19 @@ int main(){
         cin >> vec[i];
     }
 
+    LL f = 0;
     for(int i = 0; i < n; i++){
         sum += vec[i];
-        cnt++;
-        if(sum == x) break;
-        else if(sum > x){
-            sum = 0;
-            cnt = 0;
+        if(sum >= x){
+            if(sum == x){
+                cnt++;
+            }
+            while(sum >= x && f != i){
+                sum -= vec[f];
+                f++;
+            }
         }
+        if(sum == x && i == n-1) cnt++;
     }
 
     cout << cnt << endl;
