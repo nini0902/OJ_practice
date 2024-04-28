@@ -16,6 +16,10 @@ int main(){
     sort(vec.begin(),vec.end());
 
     while(t){
+        if(l >= r){
+            cout << "IMPOSSIBLE" << endl;
+            break;
+        }
         if(vec[l].first + vec[r].first == x){
             cout << vec[l].second << " " << vec[r].second << " ";
             t = 0;
@@ -26,7 +30,6 @@ int main(){
         else if(vec[l].first + vec[r].first < x){
             l++;
         }
-        if(l >= r) cout << "IMPOSSIBLE" << endl, t = 0;
     }
 return 0;
 }
