@@ -2,6 +2,7 @@
 using namespace std;
 
 int main(){
+    ios::sync_with_stdio(0), cin.tie(0);
     int n,yn = 0,t = 1,t1 = 1;
     long long x;
     cin >> n >> x;
