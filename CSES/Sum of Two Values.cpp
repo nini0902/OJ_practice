@@ -22,9 +22,11 @@ int main(){
     for(auto b : s){
         if(max_index <= b) break;
         for(int i = max_index; i > b; i--){
-            if(vec[i] == abs(x-b)) cout << m[vec[i]] << " " <<  m[b] << " ";
-            max_index = i;
-            yn = 1;
+            if(vec[i] == abs(x-b)){
+                cout << m[vec[i]] << " " <<  m[b] << " ";
+                max_index = i;
+                yn = 1;
+            }
         }
     }
     if(!yn) cout << "IMPOSSIBLE";
