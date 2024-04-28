@@ -1,42 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
+vector<pair<long long, int>> vec;
 
 int main(){
     ios::sync_with_stdio(0), cin.tie(0);
-    int n,yn = 0,t = 1,t1 = 1;
-    long long x;
+    int n,t = 1;
+    long long x,a;
     cin >> n >> x;
-    vector<long long> vec(n+1);
-    vector<int> B(n+1,0);
-    int l = 0, r = n;
+    int l = 1, r = n-1;
 
     for(int i = 1; i <= n; i++){
-        cin >> vec[i]; //輸入數據
+        cin >> a; //輸入數據
+        vec.push_back(make_pair(a,i));
     }
+    sort(vec.begin(),vec.end());
 
-    int mr = r,ml;
-    while(t1){
-        l = ml, r = mr;
-        if(l >= r) break; //如果右邊值 < 左邊值
-        while(t){
-            if(vec[l] + vec[r] == x){
-                mr = r-1, ml = l+1, yn = 1,t = 0;
-                if(B[vec[l]]==0 && B[vec[r]]==0) cout << l << " " << r << " ";
-                B[vec[l]] = 1, B[vec[r]] = 1;
-            }
-            else if(vec[l] + vec[r] > x){
-                r--;
-                if(r <= l) t = 0; //右邊碰到左邊
-            }
-            else if(vec[l] + vec[r] < x){
-                l++;
-                if(l >= r) t = 0;
-            }
+    while(t){
+        if(vec[l].first + vec[r].first == x){
+            cout << vec[l].second << " " << vec[r].second << " ";
+            t = 0;
         }
-        t = 1;
+        else if(vec[l].first + vec[r].first > x){
+            r--;
+        }
+        else if(vec[l].first + vec[r].first < x){
+            l++;
+        }
+        if(l >= r) cout << "IMPOSSIBLE" << endl, t = 0;
     }
-
-    if(!yn) cout << "IMPOSSIBLE";
-    cout << endl;
 return 0;
 }
