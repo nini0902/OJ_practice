@@ -14,19 +14,23 @@ int main(){
         cin >> vec[i]; //輸入數據
     }
 
-    int m = r;
+    int mr = r,ml;
     while(t1){
-        l++, r = m;
+        l = ml, r = mr;
         if(l >= r) break; //如果右邊值 < 左邊值
         while(t){
             if(vec[l] + vec[r] == x){
-                m = r-1, yn = 1,t = 0;
+                mr = r-1, ml = l+1, yn = 1,t = 0;
                 if(B[vec[l]]==0 && B[vec[r]]==0) cout << l << " " << r << " ";
                 B[vec[l]] = 1, B[vec[r]] = 1;
             }
-            else{
+            else if(vec[l] + vec[r] > x){
                 r--;
                 if(r <= l) t = 0; //右邊碰到左邊
+            }
+            else if(vec[l] + vec[r] < x){
+                l++;
+                if(l >= r) t = 0;
             }
         }
         t = 1;
