@@ -1,14 +1,15 @@
 #include <bits/stdc++.h>
+typedef long long LL;
 using namespace std;
 
-bool comp(const pair<int,int>& a, const pair<int,int> b){
+bool comp(const pair<LL,LL>& a, const pair<LL,LL> b){
     return a.first < b.first;
 }
 
 int main(){
-    int n,used = 0,rw = 0;
+    LL n,used = 0,rw = 0;
     cin >> n;
-    vector<pair<int,int>> t(n);
+    vector<pair<LL,LL>> t(n);
     for(int i = 0; i < n; i++){
         cin >> t[i].first >> t[i].second;
     }
