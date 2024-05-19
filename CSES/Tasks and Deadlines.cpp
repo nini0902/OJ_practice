@@ -1,21 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+bool comp(const pair<int,int>& a, const pair<int,int> b){
+    return a.first < b.first;
+}
+
 int main(){
     int n,used = 0,rw = 0;
     cin >> n;
-    map<int,int> m;
-    vector<int> t(n);
-    for(int i = 0,a,b; i < n; i++){
-        cin >> a >> b;
-        m[a] = b;
-        t[i] = a;
-    }
-    sort(t.begin(),t.end());
-
+    vector<pair<int,int>> t(n);
     for(int i = 0; i < n; i++){
-        used += t[i];
-        rw += m[t[i]] - used;
+        cin >> t[i].first >> t[i].second;
+    }
+    sort(t.begin(),t.end(),comp);
+    
+    for(int i = 0; i < n; i++){
+        used += t[i].first;
+        rw += t[i].second - used;
     }
 
     cout << rw << endl;
