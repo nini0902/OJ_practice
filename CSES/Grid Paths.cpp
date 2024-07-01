@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int find_path(vector<string>& s, int n){
+long long find_path(vector<string>& s, int n){
     vector<vector<long long>> dp(n,vector<long long>(n,0));
 
     dp[0][0] = (s[0][0] == '.') ? 1:0; //如果第一個位置可走，則+1
