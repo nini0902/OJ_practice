@@ -8,6 +8,7 @@ int remove_dig(int n){
         int max_dig = 0;
         int temp = n;
         while(temp > 0){
+            //找出數字裡最大的digit
             int digit = temp % 10;
             if(digit > max_dig) max_dig = digit;
             temp /= 10;
@@ -21,7 +22,7 @@ int remove_dig(int n){
 int main(){
     int n;
     cin >> n;
-
+    
     cout << remove_dig(n) << endl;
     return 0;
 }
