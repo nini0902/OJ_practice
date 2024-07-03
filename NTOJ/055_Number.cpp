@@ -2,6 +2,7 @@
 using namespace std;
 
 int count_song(int song, vector<unsigned int>& s){
+    //在排序過的資料哩，找某個元素出現的頭跟尾
     auto l = lower_bound(s.begin(),s.end(), song);
     auto u = upper_bound(s.begin(), s.end(), song);
     return u-l;
