@@ -21,8 +21,8 @@ int main(){
 
     cnt = 0;
     for(int i = 0; i < str.size(); i++) {
-        cnt += (str[i]/b); //加上這段可以放幾個長度圍b的區段
+        cnt += (str[i]/b); //計算str[i]最多可以放幾段長度為b的區段
     }
-    cout << cnt-a+1 << endl; //所有區段-選擇區段=未被選擇的區段，再加一則必選中
+    cout << cnt-a+1 << endl; //假設猜了cnt-a題都沒有猜中，那下一題一定可以戳到答案
     return 0;
 }
