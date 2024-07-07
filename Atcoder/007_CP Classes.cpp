@@ -13,7 +13,7 @@ int main(){
     for(int i = 0; i < q; i++){
         cin >> b;
         auto lb = lower_bound(A.begin(), A.end(), b);
-        if(lb == A.end()) lb = A.end()-1;
+        if(lb == A.end()) lb = A.end()-1; //比最後一個大就設成結尾
         auto ub = upper_bound(A.begin(), A.end(), b);
         if(ub == A.begin()) ub = A.begin(); //比開頭小就設成開頭
         else ub--; //剩下的全部-1(upper_bound是比目標大的最小值)就是比目標小的最大值或是相等值
