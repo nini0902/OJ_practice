@@ -6,7 +6,7 @@ int count_arr(int n, int m, vector<int>& x){
     dp[0] = 1;
 
     int cnt = 0;
-    for(int i = 1; i <= n; i++){
+    for(int i = 1; i < n; i++){
         cnt = 0;
         if(x[i-1] == 0){
             if(abs(x[i-2]+1-x[i]) == 1) cnt++;
@@ -16,7 +16,7 @@ int count_arr(int n, int m, vector<int>& x){
         }
         else dp[i] = dp[i-1];
     }
-    return dp[n];
+    return dp[n-1];
 }
 
 int main(){
