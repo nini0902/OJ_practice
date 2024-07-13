@@ -16,6 +16,7 @@ int main(){
         cin >> k;
         auto it = lower_bound(vec.begin(), vec.end(), k);
 
+        //如果可以找到k值就直接輸出
         if(it != vec.end() && *it == k) cout << k << endl;
         else{
             //it返回vec.end()時，*it是未定義的(因為it超出容器範圍)
