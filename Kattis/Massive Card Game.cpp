@@ -1,3 +1,4 @@
+//二分搜 binary search
 #include <bits/stdc++.h>
 using namespace std;
 
