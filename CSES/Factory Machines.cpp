@@ -2,7 +2,7 @@
 using namespace std;
 
 int bin_search(int n, int t, vector<int>& k){
-    int l = 0, r = t*k[0], mid = (l+r)/2;
+    int l = 0, r = t*k[0], mid = (l+r)/2, mm = INT_MAX;
 
     while(l < r){
         mid = (l+r)/2;
@@ -10,11 +10,13 @@ int bin_search(int n, int t, vector<int>& k){
         for(int i = 0; i < n; i++){
             sum += mid/k[i];
         }
+
+        if(sum >= t) mm = min(mm,mid);
+
         if(sum >= t) r = mid;
         else l = mid+1;
-        if(sum == t) break;
     }
-    return mid;
+    return mm;
 }
 
 int main(){
