@@ -2,13 +2,9 @@
 using namespace std;
 
 long long bin_search(long long n, long long t, vector<long long>& k){
-    long long l = 0, r = t*k[0], mid = (l+r)/2, mm = LLONG_MAX,m = 0;
+    long long l = 0, r = t*k[n-1], mid = (l+r)/2;
+    long long mm = t * k[n-1];
 
-    for(int i = 0; i < n; i++){
-            m += r/k[i];
-    }
-    if(m >= t) mm = min(mm, m);
-    
     while(l < r){
         mid = (l+r)/2;
         long long sum = 0;
