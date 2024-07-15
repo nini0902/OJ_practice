@@ -12,6 +12,7 @@ int bin_search(int n, int t, vector<int>& k){
         }
         if(sum >= t) r = mid;
         else l = mid+1;
+        if(sum == t) break;
     }
     return mid;
 }
