@@ -16,7 +16,7 @@ int main(){
 
     for(int i = c[0]; i <= x; i++){
         for(int j = 0; j < n && i-c[j] >= 0; j++){
-            dp[i] += dp[i-c[j]];
+            dp[i] += dp[i-c[j]]; //加上最後一個數字加c[j]的方法數
             dp[i] %= mod;
         }
     }
