@@ -6,7 +6,7 @@ int main(){
     long long mod = 1000000007;
     cin >> n >> x;
     vector<int> c(n);
-    vector<long long> dp(x+1, 0);
+    vector<long long> dp(1000000, 0);
 
     for(int i = 0; i < n; i++) {
         cin >> c[i];
