@@ -7,11 +7,7 @@ int main(){
     cin >> n;
 
     vector<long long> dp(n+1, 0);
-    dp[1] = 1;
-    
-    for(int i = 2; i <= 6; i++){
-            dp[i] = dp[i-1]*2;
-    }
+    dp[1] = 1, dp[2] = 2, dp[3] = 4, dp[4] = 8, dp[5] = 16, dp[6] = 32;
 
     for(int i = 7; i <= n; i++){
         for(int j = 1; j <= 6; j++){
