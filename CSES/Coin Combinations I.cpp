@@ -12,6 +12,7 @@ int main(){
         cin >> c[i];
         dp[c[i]] = 1;
     }
+    sort(c.begin(), c.end());
 
     for(int i = c[0]; i <= x; i++){
         for(int j = 0; j < n && i-c[j] >= 0; j++){
