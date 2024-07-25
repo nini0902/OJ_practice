@@ -8,7 +8,7 @@ int main(){
 
     for(int i = 0; i < n; i++){
         cin >> a;
-        cm = max(a, cm + a); //決定要不要結束上一段
+        cm = max(a, cm + a); //要麼繼續累加，要麼重置成當前元素(a)
         if(cm > M) M = cm;
     }
 
