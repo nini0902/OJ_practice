@@ -1,3 +1,4 @@
+//DP
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -17,7 +18,7 @@ int main(){
             for(int j = 1; j <= min(i,M); j++){
                 //dp[i][j]表示i個中取j個有多少種取法
                 dp[i][j] = dp[i-1][j-1] + dp[i-1][j];
-                //從
+                //從「選擇第i個元素」 + 「不選擇第i個元素」轉移過來的
             }
         }
         
