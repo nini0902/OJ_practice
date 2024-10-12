@@ -1,33 +1,24 @@
 #include <bits/stdc++.h>
-typedef long long LL;
 using namespace std;
-vector<LL> vec;
-LL x, n;
-LL sum = 0, cnt = 0;
 
 int main(){
-    cin >> n >> x;
-    vec.assign(n,0);
-
-    for(int i = 0; i < n; i++){
-        cin >> vec[i];
+  int n, k;
+  cin >> n >> k;
+  vector<int> vec(n);
+  for(int i = 0; i < n; i++) cin >> vec[i];
+  
+  queue<int> Q;
+  int cnt = 0, now = 0;
+  for(int i = 0; i < n; i++){
+    Q.push(vec[i]);
+    now += vec[i];
+    while(!Q.empty() && now > k){
+      now -= Q.front();
+      Q.pop();
     }
-
-    LL f = 0;
-    for(int i = 0; i < n; i++){
-        sum += vec[i];
-        if(sum >= x){
-            if(sum == x){
-                cnt++;
-            }
-            while(sum >= x && f != i){
-                sum -= vec[f];
-                f++;
-            }
-        }
-        if(sum == x && i == n-1) cnt++;
-    }
-
-    cout << cnt << endl;
-return 0;
+    if(now == k) cnt++;
+  }
+  
+  cout << cnt << endl;
+  return 0;
 }
