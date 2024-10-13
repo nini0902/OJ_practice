@@ -23,8 +23,6 @@ int main(){
     }
   }
   
-  for(int i = 0; i < t+1; i++){
-    cout << i << " : " << dp[i] << endl;
-  }
+  cout << dp[t] << endl;
   return 0;
 }
