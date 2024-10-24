@@ -20,6 +20,7 @@ int main(){
   }
   
   char mid;
+  //超過一個字母出現奇數次不可能組成回文
   if(cnt_mid > 1) cout << "NO SOLUTION" << endl;
   else{
     for(int i = 0; i < 26; i++){
@@ -29,6 +30,7 @@ int main(){
         continue;
       }
       else{
+        //利用stack的FILO性質，反向儲存
         for(int j = 0; j < vec[i].second/2; j++) cout << vec[i].first;
         st.push({vec[i].first, vec[i].second/2});
       }
@@ -36,6 +38,7 @@ int main(){
     
     for(int i = 0; i < cnt_mid; i++) cout << mid;
     
+    //反向輸出後段，與前面相對成為迴文
     while(!st.empty()){
       auto it = st.top();
       st.pop();
