@@ -32,6 +32,7 @@ void bfs(int r, int c, int step, vector<pair<int, int>> &Q){
       }
     }
   }
+  return;
 }
 
 int dfs(int r, int c){
@@ -65,7 +66,7 @@ int main(){
     }
   }
   
-  dis.resize(m, vector<int>(n, -1)); //初始化距離
+  dis.resize(m, vector<int>(n)); //初始化距離
   vector<pair<int, int>> Q; 
   bfs(r0, c0, m*n, Q);
   int d[N][N];
@@ -78,7 +79,7 @@ int main(){
   int tt = 1, ra = -1;
   for(auto p : Q){
     int r = p.first, c = p.second;
-    if(mp[r][c] == -1) continue;
+    if(mp[r][c] == -2) continue;
     tt += dfs(r,c);
     if(tt >= q) {ra = d[r][c]; break;}
   }
