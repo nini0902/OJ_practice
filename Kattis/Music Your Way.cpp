@@ -49,6 +49,7 @@ int main(){
   string key;
   while(n--) {
     cin >> key;
+    // 該次要比較的欄位索引：key
     int idx = col[key];
     stable_sort(songs.begin(), songs.end(), [idx](const auto &a, const auto &b) {
       return a[idx] < b[idx];
