@@ -31,6 +31,5 @@ int main(){
       M = max(dfs(i), M);
     }
   }
-  cout << M << endl;
   return 0;
 }
