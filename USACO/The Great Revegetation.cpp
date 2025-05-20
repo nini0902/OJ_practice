@@ -18,9 +18,9 @@ int main() {
 
   vector<int> color(n + 1, 0);
   for (int i = 1; i <= n; i++) {
-    bool used[5] = {}; //mark if color 1,2,3,4 is used
+    bool used[5] = {}; // mark if color 1,2,3,4 is used
     for (int g : adj[i]) {
-      if (color[g] != 0) used[color[g]] = true; //mark the color of g
+      if (color[g] != 0) used[color[g]] = true; // mark the color of g
     }
     for (int j = 1; j <= 4; j++) {
       if (!used[j]) {
