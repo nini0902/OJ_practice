@@ -3,8 +3,8 @@
 using namespace std;
 
 int main(){
-  ifstream fin("revegetate.in");
-  ofstream fout("revegetate.out");
+  ifstream fin("factory.in");
+  ofstream fout("factory.out");
   
   int n;
   fin >> n;
