@@ -2,7 +2,7 @@
 using namespace std;
 
 bool check(vector<vector<int>>& adj, vector<int>& color, int start) {
-  if(color[start] == -1) color[start] = 0;
+  if(color[start] == -1) color[start] = 0; // set start to blue
   queue<int> q;
   q.push(start);
   
@@ -40,7 +40,7 @@ int main(){
       adj[b].push_back(a);
     }
     
-    vector<int> color(n, -1);
+    vector<int> color(n, -1); // 0 for blue, 1 for red 
     bool ans = true;
     for(int i = 0; i < n; i++) {
       if(color[i] == -1) {
